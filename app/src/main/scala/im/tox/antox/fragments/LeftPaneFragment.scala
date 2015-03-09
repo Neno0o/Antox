@@ -49,18 +49,6 @@ class LeftPaneFragment extends Fragment {
     val pager = rootView.findViewById(R.id.pager).asInstanceOf[ViewPager]
     val tabs = rootView.findViewById(R.id.pager_tabs).asInstanceOf[PagerSlidingTabStrip]
 
-    val tabListener = new ActionBar.TabListener() {
-        def onTabSelected(tab: ActionBar.Tab, ft: FragmentTransaction) = {
-          pager.setCurrentItem(tab.getPosition)
-        }
-
-        def onTabUnselected(tab: ActionBar.Tab, ft: FragmentTransaction) = {
-        }
-
-        def onTabReselected(tab: ActionBar.Tab, ft: FragmentTransaction) = {
-        }
-    }
-
     pager.setAdapter(new LeftPagerAdapter(getFragmentManager))
     tabs.setViewPager(pager)
 
